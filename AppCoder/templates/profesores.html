@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    HTML Profesores
-</body>
-</html>
+{% extends "padre.html" %}
+
+{%load static%}
+
+{% block contenidoQueCambia%}
+
+<h1> HTML Profesores</h1>
+<p> Todo lo demás es heredado del padre my friend</p>
+
+{% endblock %}

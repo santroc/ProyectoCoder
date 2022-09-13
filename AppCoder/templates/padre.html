@@ -8,9 +8,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Landing Page - Start Bootstrap Theme</title>
+        <title>Santiago - Start Bootstrap Theme</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
         <!-- Google fonts-->
@@ -18,11 +18,15 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     </head>
+
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <a class="navbar-brand" href="{% url 'Inicio' %}">Inicio</a>
+                <a class="navbar-brand" href="{% url 'Cursos' %}">Cursos</a>
+                <a class="navbar-brand" href="{% url 'Entregables' %}">Entregables</a>
+                <a class="navbar-brand" href="{% url 'Estudiantes' %}">Estudiantes</a>
                 <a class="btn btn-primary" href="#signup">Sign Up</a>
             </div>
         </nav>
@@ -74,6 +78,15 @@
                 </div>
             </div>
         </header>
+
+        <!--Esto es lo dinámico dentro de la página-->
+    
+        {% block contenidoQueCambia %}
+
+        {% endblock %}
+
+        <!-- Fin de bloque dinámico-->
+
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
             <div class="container">
@@ -135,21 +148,21 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
+                            <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/testimonials-1.jpg' %}" alt="..." />
                             <h5>Margaret E.</h5>
                             <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-2.jpg" alt="..." />
+                            <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/testimonials-2.jpg' %}" alt="..." />
                             <h5>Fred S.</h5>
                             <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-3.jpg" alt="..." />
+                            <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/testimonials-3.jpg' %}" alt="..." />
                             <h5>Sarah W.</h5>
                             <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
                         </div>
