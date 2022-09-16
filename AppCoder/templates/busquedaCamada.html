@@ -1,0 +1,23 @@
+{% extends "padre.html" %}
+
+{%load static%}
+
+<link href="{% static 'css/myStyle.css' %}" rel="stylesheet" />
+<link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+
+{% block contenidoQueCambia%}
+
+<form action="buscar/" method="GET">
+
+    <input type="number" placeholder="Cursada" name="camada">
+    <input type="submit" placeholder="Enviar" value="Buscar">
+
+
+
+
+</form>
+
+
+
+
+{% endblock %}

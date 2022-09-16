@@ -1,0 +1,41 @@
+{% extends "padre.html" %}
+
+{%load static%}
+
+<link href="{% static 'css/myStyle.css' %}" rel="stylesheet" />
+<link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+
+{% block contenidoQueCambia%}
+
+<h1> Formulario - Agregar Curso</h1>
+<p> Por favor ingresa la información correspondiente al curso</p>
+
+<!--<section class="contenidoFormularioCurso">
+    <form class="formDataCurso" action="cursoFormulario" method="POST">{% csrf_token %}
+        <input type="text" placeholder="Curso" name="curso">
+        <input type="number" placeholder="Cursada" name="cursada">
+
+        <input type="submit" placeholder="Enviar" value="Enviar">
+    </form>
+</section>-->
+
+    {% if miFormulario.errors %}
+
+    <p style=" color: red"> Por favor revisar los datos, están mal</p>
+
+    {% endif %}
+
+    <section class="contenidoFormulario"></section>
+        <form class="formData" action="" method="POST">{% csrf_token %}
+        
+            <!--Llamo al form de Djanguito-->
+            
+            <table>
+            {{ miFormulario.as_table}}
+            </table>
+            
+            <input type="submit" placeholder="Enviar" value="Enviar">
+        </form>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "padre.html" %}
+
+{%load static%}
+
+<link href="{% static 'css/myStyle.css' %}" rel="stylesheet" />
+<link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+
+{% block contenidoQueCambia%}
+
+
+    <h1>Formulario de estudiantes</h1>
+    {% if formulario.errors %}
+    <p style="color: red;">Están mal los datos :(</p>
+    {% endif %}
+    <form method="POST"> {% csrf_token %}
+
+        <table>
+            {{ formulario.as_table }}
+        </table>>
+        <input type="submit" value="Registrar">
+    </form>
+
+{% endblock %}
