@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" href="{%static 'css/styles.css'%}">
+<link rel="stylesheet" href="{%static 'css/myStyle.css'%}">
+
+
+<form method="POST" class="formDataEstudiantes" action="create_estudiante"> {% csrf_token %}
+    <input type="text" name="nombre" placeholder="Nombre">
+    <input type="text" name="apellido" placeholder="Apellido">
+    <input type="email" name="email" placeholder="Correo">
+
+    <button class="btn btn-primary" type="submit">Enviar</button>
+</form>

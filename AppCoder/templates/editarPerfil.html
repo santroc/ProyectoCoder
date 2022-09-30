@@ -1,0 +1,23 @@
+{% extends "padre.html" %}
+
+{%load static%}
+
+{% block contenidoQueCambia%}
+
+<h1> Editar Perfil</h1>
+<h1>{{ usuario }}</h1>
+
+<form method = "POST"> {% csrf_token %}
+
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Editar Perfil">
+
+</form>
+
+<a href="/AppCoder/profile/changepass"> Cambiar contraseña </a>
+
+{% endblock %}
+
+

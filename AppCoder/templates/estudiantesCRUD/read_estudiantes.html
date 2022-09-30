@@ -1,0 +1,20 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+
+<link rel="stylesheet" href="{%static 'css/styles.css'%}">
+{% block contenidoQueCambia%}
+
+{% for estudiante in estudiantes %}
+    <li>
+        {{ estudiante }}
+        <a class="btn btn-warning" href="update_estudiante/{{estudiante.id}}"> Editar </a>
+        <a class="btn btn-danger" href="delete_estudiante/{{estudiante.id}}"> Borrar </a>
+    </li>
+    <br>
+{% endfor %}
+
+<a class="btn btn-success" href="create_estudiante">+ Agregar estudiante </a>
+
+{% endblock %}
